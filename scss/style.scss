@@ -1,0 +1,138 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%; //10px
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #f3f3f3;
+	color: #222;
+	font-size: 1.6rem;
+}
+
+.main {
+	display: flex;
+	height: 100vh;
+	&_container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		margin-left: 10em;
+		transform: translateY(-3em);
+		&__image {
+			height: 108px;
+			transform: translateX(-9.5em);
+		}
+
+		&__description {
+			transform: translateY(-0.8em);
+			font-size: 2.6rem;
+		}
+	}
+
+	&_input_container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: end;
+		padding: 3em;
+		width: 50%;
+		&__form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #fff;
+			padding: 1em;
+			width: 80%;
+			text-align: center;
+			transform: translateX(-6em);
+			border-radius: 0.8em;
+			box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
+			-webkit-box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
+			-moz-box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
+			&_input {
+				display: block;
+				width: 100%;
+				padding: 1.2em;
+				border: 1.2px solid #e4e4e4;
+				border-radius: 0.8em;
+				font-size: 1.6rem;
+
+				&:nth-child(2) {
+					position: relative;
+					margin-top: 1em;
+				}
+
+				&:focus {
+					outline: none;
+					border: 1px solid rgb(43, 104, 216);
+				}
+			}
+
+			&_button {
+				padding: 0.8em;
+				margin-top: 1.4em;
+				width: 100%;
+				border: none;
+				border-radius: 0.4em;
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: #fff;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&--login {
+					background-color: rgb(43, 104, 216);
+				}
+
+				&--create_account {
+					width: 60%;
+					background-color: rgb(9, 172, 9);
+				}
+			}
+
+			&_forgotten_password {
+				display: inline-block;
+				margin: 1.4em;
+				font-size: 1.3rem;
+				color: rgb(108, 108, 253);
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&--underline {
+					display: inline-block;
+					width: 100%;
+					border-bottom: 1px solid rgb(214, 214, 214);
+				}
+			}
+		}
+	}
+}
+
+.toggle_password_visibility {
+	position: absolute;
+	top: 7em;
+	right: 5em;
+	transform: translateX(2em);
+	cursor: pointer;
+}
+
+.hide-icon {
+	display: none;
+}

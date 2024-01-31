@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - zaloguj się lub zarejestruj</title>
+
+    <!--Poppins font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/a3266b2c61.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="main_container">
+            <img class="main_container__image" src="img/facebook_logo.svg" alt="Facebook">
+            <p class="main_container__description">Facebook pomaga kontaktować się z innymi osobami oraz udostępniać im
+                różne informacje i materiały.</p>
+        </div>
+        <div class="main_input_container">
+            <div class="main_input_container__form">
+                <input class="main_input_container__form_input email_input" type="email"
+                    placeholder="Adres e-mail lub numer telefonu">
+                <input class="main_input_container__form_input password_input" type="password" placeholder="Hasło"><i class="fa-regular fa-eye main_input_container__form_input--hide_password toggle_password_visibility hide-icon"></i><i class="fa-regular fa-eye-slash main_input_container__form_input--show_password toggle_password_visibility hide-icon"></i>
+                <button class="main_input_container__form_button main_input_container__form_button--login">Zaloguj
+                    się</button>
+                <a class="main_input_container__form_forgotten_password">Nie pamiętasz hasła?</a>
+                <span class="main_input_container__form_forgotten_password--underline"></span>
+                <button
+                    class="main_input_container__form_button main_input_container__form_button--create_account">Utwórz
+                    nowe konto</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
