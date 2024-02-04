@@ -28,18 +28,157 @@
             <div class="main_input_container__form">
                 <input class="main_input_container__form_input email_input" type="email"
                     placeholder="Adres e-mail lub numer telefonu">
-                <input class="main_input_container__form_input password_input" type="password" placeholder="Hasło"><i class="fa-regular fa-eye main_input_container__form_input--hide_password toggle_password_visibility hide-icon"></i><i class="fa-regular fa-eye-slash main_input_container__form_input--show_password toggle_password_visibility hide-icon"></i>
+                <input class="main_input_container__form_input password_input" type="password" placeholder="Hasło"><i
+                    class="fa-regular fa-eye main_input_container__form_input--hide_password toggle_password_visibility hide-item"></i><i
+                    class="fa-regular fa-eye-slash main_input_container__form_input--show_password toggle_password_visibility hide-item"></i>
                 <button class="main_input_container__form_button main_input_container__form_button--login">Zaloguj
                     się</button>
                 <a class="main_input_container__form_forgotten_password">Nie pamiętasz hasła?</a>
-                <span class="main_input_container__form_forgotten_password--underline"></span>
+                <span class="main_input_container__form_forgotten_password underline"></span>
                 <button
                     class="main_input_container__form_button main_input_container__form_button--create_account">Utwórz
                     nowe konto</button>
             </div>
         </div>
     </main>
+    <div class="create_account">
+        <div class="create_account_container hide-item">
+            <div class="create_account_container__header_container">
+                <h2 class="create_account_container__header">Zarejestruj się</h2>
+                <p class="create_account_container__paragraph">To szybkie i proste.</p>
+                <i class="create_account_container__close_window fa-solid fa-xmark"></i>
+            </div>
+            <span class="underline"></span>
+            <form action="" class="create_account_container__form">
+                <input class="create_account_container__form--input name_surname_input" type="text" placeholder="Imię">
+                <input class="create_account_container__form--input name_surname_input" type="text"
+                    placeholder="Nazwisko">
+                <input class="create_account_container__form--input create_account_email_input" type="email"
+                    placeholder="Adres e-mail">
+                <input class="create_account_container__form--input create_account_email_input_confirm hide-item"
+                    type="email" placeholder="Wprowadź ponownie adres e-mail">
+                <input class="create_account_container__form--input create_account_password_input" type="password"
+                    placeholder="Nowe hasło">
+                <p class="create_account_container__form--date_of_birth">Data urodzenia <span><i
+                            class="fa-solid fa-circle-question"></i></span></p>
+                <div class="create_account_container__form--select_container">
+                    <select class="create_account_container__form--input create_account_container__form--select_day">
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const selectDay = document.querySelector('.create_account_container__form--select_day');
+                                selectDay.value = new Date().getDate();
+                            });
+                        </script>
+                    </select>
+                    <select class="create_account_container__form--input create_account_container__form--select_month">
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const selectMonth = document.querySelector('.create_account_container__form--select_month');
 
+                                const currentDate = new Date();
+
+                                const currentMonth = currentDate.getMonth() + 1;
+
+                                for (let i = 1; i <= 12; i++) {
+                                    const option = document.createElement('option');
+                                    option.value = i;
+                                    option.text = getMonthName(i);
+                                    option.selected = i === currentMonth;
+
+                                    selectMonth.appendChild(option);
+                                }
+                            });
+
+                            function getMonthName(monthNumber) {
+                                switch (monthNumber) {
+                                    case 1:
+                                        return "Styczeń";
+                                    case 2:
+                                        return "Luty";
+                                    case 3:
+                                        return "Marzec";
+                                    case 4:
+                                        return "Kwiecień";
+                                    case 5:
+                                        return "Maj";
+                                    case 6:
+                                        return "Czerwiec";
+                                    case 7:
+                                        return "Lipiec";
+                                    case 8:
+                                        return "Sierpień";
+                                    case 9:
+                                        return "Wrzesień";
+                                    case 10:
+                                        return "Październik";
+                                    case 11:
+                                        return "Listopad";
+                                    case 12:
+                                        return "Grudzień";
+                                    default:
+                                        return "";
+                                }
+                            }
+                        </script>
+                    </select>
+                    <select class="create_account_container__form--input create_account_container__form--select_year">
+                        <script>
+                            let year = new Date().getFullYear();
+                            for (let i = year; i >= year - 119; i--) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const selectDay = document.querySelector('.create_account_container__form--select_year');
+                                selectDay.value = year;
+                            });
+                        </script>
+                    </select>
+                </div>
+                <p class="create_account_container__form--gender">Płeć<span><i
+                            class="fa-solid fa-circle-question"></i></span></p>
+                <div class="create_account_container__form--gender_container">
+                    <label class="create_account_container__form--gender_label">Kobieta<input class="radio" type="radio"
+                            name="płeć"></label>
+                    <label class="create_account_container__form--gender_label">Mężczyzna<input class="radio"
+                            type="radio" name="płeć"></label>
+                    <label
+                        class="create_account_container__form--gender_label create_account_container__form--custom_settings">Ustawienia
+                        niestandardowe<input class="radio" type="radio" name="płeć"></label>
+                    <div class="create_account_container__form--custom_settings_container hide-item">
+                        <select class="create_account_container__form--select_gender">
+                            <option value="1" selected disabled>Wybierz zaimek</option>
+                            <option value="2">Ona: Złóż jej życzenia urodzinowe!</option>
+                            <option value="3">On: Złóż mu życzenia urodzinowe!</option>
+                            <option value="4">Oni/ne: Złóż mu/jej życzenia urodzinowe!</option>
+                        </select>
+                        <p class="create_account_container__form--gender_info">Identyfikujący Cię zaimek jest widoczny
+                            dla
+                            wszystkich</p>
+                        <input class="create_account_container__form--not_required_input" type="text"
+                            placeholder="Płeć (opcjonalnie)">
+                    </div>
+                </div>
+                <p class="create_account_container__form--description">Osoby korzystające z naszej usługi mogły przesłać
+                    Twoje dane kontaktowe do Facebooka. <a href="">Dowiedz
+                        się więcej.</a></p>
+                <p class="create_account_container__form--description">Klikając przycisk Zarejestruj się, akceptujesz
+                    nasz <a href="">Regulamin.</a> <a href="">Zasady ochrony
+                        prywatności</a> informują, w jaki sposób gromadzimy, użytkujemy i udostępniamy dane
+                    użytkowników, a
+                    <a href="">Zasady dotyczące plików cookie</a> informują jak korzystamy z plików cookie i podobnych
+                    technologii. Możesz otrzymywać powiadomienia SMS z Facebooka, z których możesz zrezygnować w
+                    dowolnej
+                    chwili.
+                </p>
+            </form>
+            <div class="create_account_container__button_container">
+                <button class="create_account_container__button">Zarejestruj się</button>
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 
