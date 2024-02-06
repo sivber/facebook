@@ -137,22 +137,23 @@
                         </script>
                     </select>
                 </div>
-                <p class="create_account_container__form--gender">Płeć<span><i
+                <p class="create_account_container__form--gender">Płeć <span><i
                             class="fa-solid fa-circle-question"></i></span></p>
                 <div class="create_account_container__form--gender_container">
-                    <label class="create_account_container__form--gender_label">Kobieta<input class="radio" type="radio"
-                            name="płeć"></label>
-                    <label class="create_account_container__form--gender_label">Mężczyzna<input class="radio"
-                            type="radio" name="płeć"></label>
-                    <label
-                        class="create_account_container__form--gender_label create_account_container__form--custom_settings">Ustawienia
-                        niestandardowe<input class="radio" type="radio" name="płeć"></label>
+                    <label for="woman" class="create_account_container__form--gender_input gender_woman">Kobieta<input
+                            class="radio woman" type="radio" name="płeć" id="woman"></label>
+                    <label for="man" class="create_account_container__form--gender_input gender_man">Mężczyzna<input
+                            class="radio man" type="radio" name="płeć" id="man"></label>
+                    <label for="custom_settings"
+                        class="create_account_container__form--gender_input create_account_container__form--custom_settings gender_custom_settings">Ustawienia
+                        niestandardowe<input class="radio custom_settings" type="radio" name="płeć"
+                            id="custom_settings"></label>
                     <div class="create_account_container__form--custom_settings_container hide-item">
                         <select class="create_account_container__form--select_gender">
                             <option value="1" selected disabled>Wybierz zaimek</option>
                             <option value="2">Ona: Złóż jej życzenia urodzinowe!</option>
                             <option value="3">On: Złóż mu życzenia urodzinowe!</option>
-                            <option value="4">Oni/ne: Złóż mu/jej życzenia urodzinowe!</option>
+                            <option value="4">Oni/one: Złóż mu/jej życzenia urodzinowe!</option>
                         </select>
                         <p class="create_account_container__form--gender_info">Identyfikujący Cię zaimek jest widoczny
                             dla

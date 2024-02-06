@@ -31,9 +31,7 @@ const closeFormContainerButton = document.querySelector(
 	'.create_account_container__close_window'
 );
 
-const customSettingsInput = document.querySelector(
-	'.create_account_container__form--custom_settings'
-);
+const genderInputs = document.querySelectorAll('.radio');
 
 const customSettingsContainer = document.querySelector(
 	'.create_account_container__form--custom_settings_container'
@@ -110,12 +108,30 @@ function checkEmail() {
 }
 
 const showGenderCustomSettings = () => {
-	if (customSettingsInput.checked) {
-		customSettingsContainer.classList.toggle('hide-item');
-	} else {
-		customSettingsContainer.classList.toggle('hide-item');
+	if (!womanInput.checked && !manInput.checked) {
+		console.log('kliknieta woman albo man');
+	} else if (customSettingsInput.checked) {
+		console.log('kliknieta custom settings');
 	}
 };
+
+genderInputs.forEach((input) => {
+	input.addEventListener('change', (event) => {
+		const hasManOrWomanClass =
+			input.classList.contains('man') || input.classList.contains('woman');
+		const hasCustomSettingsClass = input.classList.contains('custom_settings');
+		const hasHidingClass =
+			customSettingsContainer.classList.contains('hide-item');
+
+		if (hasManOrWomanClass) {
+			if (!hasHidingClass) {
+				customSettingsContainer.classList.add('hide-item');
+			}
+		} else if (hasCustomSettingsClass) {
+			customSettingsContainer.classList.remove('hide-item');
+		}
+	});
+});
 
 hidePassword.addEventListener('click', changeIcon);
 showPassword.addEventListener('click', changeIcon);
@@ -126,4 +142,3 @@ loginBtn.addEventListener('click', sendToMainPage);
 createAccountButton.addEventListener('click', showFormToCreateAccount);
 createAccountEmailInput.addEventListener('input', checkEmail);
 closeFormContainerButton.addEventListener('click', hideFormToCreateAccount);
-customSettingsInput.addEventListener('change', showGenderCustomSettings);

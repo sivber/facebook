@@ -1,0 +1,7 @@
+
+1. account doesn't exist popup in login section
+2. add tooltip to question marks in create account section about birth date and gender
+3. checking if both emails in create account section are correct
+4. checking if password has at least 8 characters and one of them are write with upper case
+5. checking if user has at least 16 yo
+6. checking if date i correct (user can't select 30 february etc.)
