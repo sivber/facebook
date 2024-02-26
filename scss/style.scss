@@ -71,6 +71,13 @@ body {
 			box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
 			-webkit-box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
 			-moz-box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
+
+			&--wrong_account_popup {
+				margin-top: 0.5em;
+				font-size: 1.2rem;
+				color: red;
+			}
+
 			&_input {
 				display: block;
 				width: 100%;
@@ -147,7 +154,6 @@ body {
 
 .hide-item {
 	display: none;
-	transition: display 0.5s ease-in-out;
 }
 
 .create_account {
@@ -187,6 +193,7 @@ body {
 		}
 
 		&__form {
+			position: relative;
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
@@ -220,6 +227,47 @@ body {
 				margin-top: 1.2em;
 				font-weight: lighter;
 				font-size: 1.3rem;
+			}
+
+			.date_of_birth__question_mark:hover,
+			.gender__question_mark:hover {
+				cursor: pointer;
+			}
+
+			.date_of_birth__info,
+			.gender__info {
+				position: absolute;
+				padding: 1em 2.5em 1em 1em;
+				background-color: #fff;
+				border-radius: 0.8em;
+				box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+				-webkit-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+				-moz-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+				font-size: 1.1rem;
+				width: 75%;
+				z-index: 1;
+				&--span {
+					font-weight: bold;
+				}
+
+				&--link {
+					text-decoration: none;
+					color: dodgerblue;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.date_of_birth__info {
+				top: 32%;
+				right: 75%;
+			}
+
+			.gender__info {
+				top: 45%;
+				right: 91%;
 			}
 
 			&--select_container {
@@ -294,29 +342,37 @@ body {
 			}
 
 			&--description {
-				font-weight: lighter;
 				font-size: 1rem;
 				margin-top: 1em;
+
+				.description__link {
+					text-decoration: none;
+					color: dodgerblue;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
-		}
 
-		&__button_container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
+			&--register_button {
+				padding: 0.6em;
+				margin: 1.4em;
+				border: none;
+				border-radius: 0.4em;
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: #fff;
+				width: 40%;
+				background-color: rgb(9, 172, 9);
+				cursor: pointer;
 
-		&__button {
-			padding: 0.6em;
-			margin: 1.4em;
-			border: none;
-			border-radius: 0.4em;
-			font-size: 1.8rem;
-			font-weight: bold;
-			color: #fff;
-			width: 40%;
-			background-color: rgb(9, 172, 9);
-			cursor: pointer;
+				&_container {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+				}
+			}
 		}
 	}
 }

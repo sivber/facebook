@@ -6,6 +6,9 @@ const hidePassword = document.querySelector(
 );
 const passwordInput = document.querySelector('.password_input');
 const emailInput = document.querySelector('.email_input');
+const wrongAccountPopup = document.querySelector(
+	'.main_input_container__form--wrong_account_popup'
+);
 const loginBtn = document.querySelector(
 	'.main_input_container__form_button--login'
 );
@@ -30,6 +33,14 @@ const createAccountConfirmEmailInput = document.querySelector(
 const closeFormContainerButton = document.querySelector(
 	'.create_account_container__close_window'
 );
+
+const dateOfBirthQuestionMark = document.querySelector(
+	'.date_of_birth__question_mark'
+);
+const dateOfBirthInfo = document.querySelector('.date_of_birth__info');
+
+const genderQuestionMark = document.querySelector('.gender__question_mark');
+const genderInfo = document.querySelector('.gender__info');
 
 const genderInputs = document.querySelectorAll('.radio');
 
@@ -82,7 +93,8 @@ const sendToMainPage = () => {
 	) {
 		window.location.href = '../facebook.html';
 	} else {
-		//popup
+		wrongAccountPopup.classList.remove('hide-item');
+		wrongAccountPopup.textContent = 'Wpisano niewłaściwe dane';
 	}
 };
 
@@ -107,11 +119,25 @@ function checkEmail() {
 	}
 }
 
-const showGenderCustomSettings = () => {
-	if (!womanInput.checked && !manInput.checked) {
-		console.log('kliknieta woman albo man');
-	} else if (customSettingsInput.checked) {
-		console.log('kliknieta custom settings');
+const showBirthInfo = () => {
+	if (!genderInfo.classList.contains('hide-item'))
+		genderInfo.classList.add('hide-item');
+	dateOfBirthInfo.classList.toggle('hide-item');
+};
+
+const showGenderInfo = () => {
+	if (!dateOfBirthInfo.classList.contains('hide-item'))
+		dateOfBirthInfo.classList.add('hide-item');
+	genderInfo.classList.toggle('hide-item');
+};
+
+const hideBirthAndGenderInformations = (e) => {
+	const dateOfBirthInfoIsHiden =
+		dateOfBirthInfo.classList.contains('hide-item');
+	const genderInfoIsHiden = genderInfo.classList.contains('hide-item');
+	if (!dateOfBirthQuestionMark.contains(e.target) && !genderQuestionMark.contains(e.target)) {
+		if(!dateOfBirthInfoIsHiden) dateOfBirthInfo.classList.add('hide-item');
+		if(!genderInfoIsHiden) genderInfo.classList.add('hide-item');
 	}
 };
 
@@ -142,3 +168,6 @@ loginBtn.addEventListener('click', sendToMainPage);
 createAccountButton.addEventListener('click', showFormToCreateAccount);
 createAccountEmailInput.addEventListener('input', checkEmail);
 closeFormContainerButton.addEventListener('click', hideFormToCreateAccount);
+dateOfBirthQuestionMark.addEventListener('click', showBirthInfo);
+genderQuestionMark.addEventListener('click', showGenderInfo);
+document.addEventListener('click', hideBirthAndGenderInformations);

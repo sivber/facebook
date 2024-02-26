@@ -72,6 +72,11 @@ body {
   -webkit-box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 25px -11px rgba(0, 0, 0, 0.75);
 }
+.main_input_container__form--wrong_account_popup {
+  margin-top: 0.5em;
+  font-size: 1.2rem;
+  color: red;
+}
 .main_input_container__form_input {
   display: block;
   width: 100%;
@@ -137,7 +142,6 @@ body {
 
 .hide-item {
   display: none;
-  transition: display 0.5s ease-in-out;
 }
 
 .create_account {
@@ -176,6 +180,7 @@ body {
   cursor: pointer;
 }
 .create_account_container__form {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -206,6 +211,44 @@ body {
   margin-top: 1.2em;
   font-weight: lighter;
   font-size: 1.3rem;
+}
+.create_account_container__form .date_of_birth__question_mark:hover,
+.create_account_container__form .gender__question_mark:hover {
+  cursor: pointer;
+}
+.create_account_container__form .date_of_birth__info,
+.create_account_container__form .gender__info {
+  position: absolute;
+  padding: 1em 2.5em 1em 1em;
+  background-color: #fff;
+  border-radius: 0.8em;
+  box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+  font-size: 1.1rem;
+  width: 75%;
+  z-index: 1;
+}
+.create_account_container__form .date_of_birth__info--span,
+.create_account_container__form .gender__info--span {
+  font-weight: bold;
+}
+.create_account_container__form .date_of_birth__info--link,
+.create_account_container__form .gender__info--link {
+  text-decoration: none;
+  color: dodgerblue;
+}
+.create_account_container__form .date_of_birth__info--link:hover,
+.create_account_container__form .gender__info--link:hover {
+  text-decoration: underline;
+}
+.create_account_container__form .date_of_birth__info {
+  top: 32%;
+  right: 75%;
+}
+.create_account_container__form .gender__info {
+  top: 45%;
+  right: 91%;
 }
 .create_account_container__form--select_container {
   margin-top: -0.5em;
@@ -267,16 +310,17 @@ body {
   width: 100%;
 }
 .create_account_container__form--description {
-  font-weight: lighter;
   font-size: 1rem;
   margin-top: 1em;
 }
-.create_account_container__button_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.create_account_container__form--description .description__link {
+  text-decoration: none;
+  color: dodgerblue;
 }
-.create_account_container__button {
+.create_account_container__form--description .description__link:hover {
+  text-decoration: underline;
+}
+.create_account_container__form--register_button {
   padding: 0.6em;
   margin: 1.4em;
   border: none;
@@ -287,4 +331,9 @@ body {
   width: 40%;
   background-color: rgb(9, 172, 9);
   cursor: pointer;
+}
+.create_account_container__form--register_button_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

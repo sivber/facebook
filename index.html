@@ -31,6 +31,7 @@
                 <input class="main_input_container__form_input password_input" type="password" placeholder="Hasło"><i
                     class="fa-regular fa-eye main_input_container__form_input--hide_password toggle_password_visibility hide-item"></i><i
                     class="fa-regular fa-eye-slash main_input_container__form_input--show_password toggle_password_visibility hide-item"></i>
+                <p class="main_input_container__form--wrong_account_popup hide-item"></p>
                 <button class="main_input_container__form_button main_input_container__form_button--login">Zaloguj
                     się</button>
                 <a class="main_input_container__form_forgotten_password">Nie pamiętasz hasła?</a>
@@ -50,19 +51,35 @@
             </div>
             <span class="underline"></span>
             <form action="" class="create_account_container__form">
-                <input class="create_account_container__form--input name_surname_input" type="text" placeholder="Imię">
+                <input class="create_account_container__form--input name_surname_input" type="text" placeholder="Imię"
+                    required>
                 <input class="create_account_container__form--input name_surname_input" type="text"
-                    placeholder="Nazwisko">
+                    placeholder="Nazwisko" required>
                 <input class="create_account_container__form--input create_account_email_input" type="email"
-                    placeholder="Adres e-mail">
+                    placeholder="Adres e-mail" required>
                 <input class="create_account_container__form--input create_account_email_input_confirm hide-item"
-                    type="email" placeholder="Wprowadź ponownie adres e-mail">
+                    type="email" placeholder="Wprowadź ponownie adres e-mail" required>
                 <input class="create_account_container__form--input create_account_password_input" type="password"
-                    placeholder="Nowe hasło">
-                <p class="create_account_container__form--date_of_birth">Data urodzenia <span><i
-                            class="fa-solid fa-circle-question"></i></span></p>
+                    placeholder="Nowe hasło" required>
+                <p class="create_account_container__form--date_of_birth">Data urodzenia <span
+                        class="date_of_birth__question_mark"><i class="fa-solid fa-circle-question"></i>
+                        <p class="date_of_birth__info hide-item"><span class="date_of_birth__info--span">Udostępnienie
+                                daty
+                                urodzin</span>
+                            pomoże dopasować wrażenia z korzystania z Facebooka do Twojego wieku. Aby zmienić widoczność
+                            tych
+                            informacji dla innych użytkowników, odwiedź sekcję Informacje w swoim profilu. Aby uzyskać
+                            więcej
+                            szczegółów, zobacz nasze <a class="date_of_birth__info--link"
+                                href="https://pl-pl.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0"
+                                target="_blank">Zasady
+                                ochrony prywatności.</a></p>
+                    </span>
+
+                </p>
                 <div class="create_account_container__form--select_container">
-                    <select class="create_account_container__form--input create_account_container__form--select_day">
+                    <select class="create_account_container__form--input create_account_container__form--select_day"
+                        required>
                         <script>
                             for (let i = 1; i <= 31; i++) {
                                 document.write(`<option value="${i}">${i}</option>`);
@@ -73,7 +90,8 @@
                             });
                         </script>
                     </select>
-                    <select class="create_account_container__form--input create_account_container__form--select_month">
+                    <select class="create_account_container__form--input create_account_container__form--select_month"
+                        required>
                         <script>
                             document.addEventListener("DOMContentLoaded", function () {
                                 const selectMonth = document.querySelector('.create_account_container__form--select_month');
@@ -124,7 +142,8 @@
                             }
                         </script>
                     </select>
-                    <select class="create_account_container__form--input create_account_container__form--select_year">
+                    <select class="create_account_container__form--input create_account_container__form--select_year"
+                        required>
                         <script>
                             let year = new Date().getFullYear();
                             for (let i = year; i >= year - 119; i--) {
@@ -137,15 +156,19 @@
                         </script>
                     </select>
                 </div>
-                <p class="create_account_container__form--gender">Płeć <span><i
-                            class="fa-solid fa-circle-question"></i></span></p>
+                <p class="create_account_container__form--gender">Płeć <span class="gender__question_mark"><i
+                            class="fa-solid fa-circle-question"></i></span>
+                <p class="gender__info hide-item">Widoczność swojej płci w profilu możesz zmienić później. Zaznacz
+                    Ustawienie
+                    niestandardowe, jeśli chcesz wybrać inną płeć lub nie wybierać żadnej opcji.</p>
+                </p>
                 <div class="create_account_container__form--gender_container">
                     <label for="woman" class="create_account_container__form--gender_input gender_woman">Kobieta<input
-                            class="radio woman" type="radio" name="płeć" id="woman"></label>
+                            class="radio woman" type="radio" name="płeć" id="woman" required></label>
                     <label for="man" class="create_account_container__form--gender_input gender_man">Mężczyzna<input
                             class="radio man" type="radio" name="płeć" id="man"></label>
                     <label for="custom_settings"
-                        class="create_account_container__form--gender_input create_account_container__form--custom_settings gender_custom_settings">Ustawienia
+                        class="create_account_container__form--gender_input create_account_container__form--custom_settings gender_custom_settings">Ustawienie
                         niestandardowe<input class="radio custom_settings" type="radio" name="płeć"
                             id="custom_settings"></label>
                     <div class="create_account_container__form--custom_settings_container hide-item">
@@ -163,21 +186,29 @@
                     </div>
                 </div>
                 <p class="create_account_container__form--description">Osoby korzystające z naszej usługi mogły przesłać
-                    Twoje dane kontaktowe do Facebooka. <a href="">Dowiedz
+                    Twoje dane kontaktowe do Facebooka. <a class="description__link"
+                        href="https://pl-pl.facebook.com/help/637205020878504" target="_blank">Dowiedz
                         się więcej.</a></p>
                 <p class="create_account_container__form--description">Klikając przycisk Zarejestruj się, akceptujesz
-                    nasz <a href="">Regulamin.</a> <a href="">Zasady ochrony
+                    nasz <a class="description__link" href="https://pl-pl.facebook.com/legal/terms/update"
+                        target="_blank">Regulamin.</a> <a class="description__link"
+                        href="https://pl-pl.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0"
+                        target="_blank">Zasady ochrony
                         prywatności</a> informują, w jaki sposób gromadzimy, użytkujemy i udostępniamy dane
                     użytkowników, a
-                    <a href="">Zasady dotyczące plików cookie</a> informują jak korzystamy z plików cookie i podobnych
+                    <a class="description__link"
+                        href="https://pl-pl.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0"
+                        target="_blank">Zasady dotyczące plików cookie</a> informują jak korzystamy z plików cookie i
+                    podobnych
                     technologii. Możesz otrzymywać powiadomienia SMS z Facebooka, z których możesz zrezygnować w
                     dowolnej
                     chwili.
                 </p>
+                <div class="create_account_container__form--register_button_container">
+                    <input class="create_account_container__form--register_button" type="submit"
+                        value="Zarejestruj się">
+                </div>
             </form>
-            <div class="create_account_container__button_container">
-                <button class="create_account_container__button">Zarejestruj się</button>
-            </div>
         </div>
     </div>
     <script src="js/script.js"></script>
